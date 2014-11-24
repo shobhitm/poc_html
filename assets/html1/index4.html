@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;" />
+    <title>My HTML</title>
+
+</head>
+<body style="background:yellow;" >
+<h1>POC</h1>
+
+
+<img id="imageView" src="sk_logo.png" height="176.67" width="212.67"/>
+<div >
+    <input type="button" value="Hi hike" onClick="showAndroidToast('Hello Android!')" />
+</div>
+<div id="mytext"></div>
+<div id="mytext2"></div>
+
+<script language="javascript">
+   function showAndroidToast(toast) {
+       AndroidFunction.showToast(toast);
+   }
+
+
+    function callToChangeTitle(msg){
+     document.getElementById("mytext").innerHTML = msg;
+       }
+
+    function callToChangeDescription(msg){
+     document.getElementById("mytext2").innerHTML = msg;
+       }
+
+     function callToChangeImage(msg){
+     document.getElementById("imageView").src = msg;
+       }
+
+
+</script>
+
+</body>
+</html>

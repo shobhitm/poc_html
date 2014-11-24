@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;" />
+    <title>My HTML</title>
+
+</head>
+<body style="background:green;" >
+<h1>MyHTML</h1>
+
+<div >
+    <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')"  />
+</div>
+
+<div id="mytext"></div>
+<div id="mytext2"></div>
+
+<img id="imageView" src="sk_logo.png"  height="176.67" width="212.67" />
+
+
+<script language="javascript">
+   function showAndroidToast(toast) {
+       AndroidFunction.showToast(toast);
+   }
+
+
+    function callToChangeImage(msg){
+     document.getElementById("imageView").src = msg;
+     console.log("abc");
+     }
+
+
+
+     function callToChangeTitle(msg){
+     document.getElementById("mytext").innerHTML = msg;
+       }
+  
+
+</script>
+
+</body>
+</html>
