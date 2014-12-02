@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 /**
  * Created by shobhitmandloi on 13/10/14.
  */
-public class XMLAdapter extends RecyclerView.Adapter implements View.OnClickListener{
+public class XMLAdapter extends BaseAdapter implements View.OnClickListener{
 
     private static final int TYPE_ITEM1 = 0;
     private static final int TYPE_ITEM2 = 1;
@@ -39,15 +38,6 @@ public class XMLAdapter extends RecyclerView.Adapter implements View.OnClickList
         mContext = context;
     }
 
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-
-    }
 
     @Override
     public int getItemViewType(int position) {
@@ -73,12 +63,17 @@ public class XMLAdapter extends RecyclerView.Adapter implements View.OnClickList
 
 
     @Override
-    public long getItemId(int position) {
+    public int getCount() {
         return 0;
     }
 
     @Override
-    public int getItemCount() {
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
         return 0;
     }
 

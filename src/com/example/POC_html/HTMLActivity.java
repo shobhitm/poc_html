@@ -16,7 +16,7 @@ public class HTMLActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        lv = (ListView) findViewById(R.id.html_list);
+        lv = (ListView) findViewById(R.id.list);
        // ContextWrapper cw = new ContextWrapper(getApplicationContext());
         mAdapter = new HTML_Adapter(getApplicationContext());
         lv.setAdapter(mAdapter);
