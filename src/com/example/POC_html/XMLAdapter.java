@@ -64,7 +64,7 @@ public class XMLAdapter extends BaseAdapter implements View.OnClickListener{
 
     @Override
     public int getCount() {
-        return 0;
+        return 500;
     }
 
     @Override
@@ -83,7 +83,6 @@ public class XMLAdapter extends BaseAdapter implements View.OnClickListener{
         View view = convertView;
         ViewHolder holder;
         if (view == null || view.getTag() == null) {
-
             holder = new ViewHolder();
             switch (type){
                 case TYPE_ITEM1:

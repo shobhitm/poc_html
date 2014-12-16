@@ -109,11 +109,6 @@ public class HTML_Adapter extends BaseAdapter{
 
     private void webViewHandler(final WebView myBrowser, final int position, int type) {
 
-//        myBrowser.setOnTouchListener(new View.OnTouchListener() {
-//            public boolean onTouch(View v, MotionEvent event) {
-//                return (event.getAction() == MotionEvent.ACTION_MOVE);
-//            }
-//        });
         final MyJavaScriptInterface myJavaScriptInterface
                 = new MyJavaScriptInterface(mContext, position);
         myBrowser.setVerticalScrollBarEnabled(false);
@@ -123,14 +118,9 @@ public class HTML_Adapter extends BaseAdapter{
         myBrowser.getSettings().setJavaScriptEnabled(true);
 
 
-
-//                File dir = Environment.getDataDirectory();
-//                File yourFile = new File(dir, "/hike_poc/index.html");
-
-       // String url =  "file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index.html" ;
         switch (type){
             case TYPE_ITEM1:
-                myBrowser.loadUrl("file:///android_asset/html1/index1.html");
+                myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index1.html");
                 //myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index1.html");
                 break;
 
@@ -181,14 +171,6 @@ public class HTML_Adapter extends BaseAdapter{
         // String imgSrc = "file:///android_asset/html1/sk_noplace.png";
         int randomNum =(int) (Math.random() * 4);
          String imgSrc = Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc_image/place_default" + String.valueOf(randomNum) + (randomNum == 0?".png":".jpg") ;
-        //   Bitmap myBitmap = BitmapFactory.decodeFile(imgSrc);
-
-        // Convert bitmap to Base64 encoded image for web
-//                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//                myBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-//                byte[] byteArray = byteArrayOutputStream.toByteArray();
-//                String imageBase64 = Base64.encodeToString(byteArray, Base64.DEFAULT);
-//                String image = "data:image/png;base64," + imageBase64;
         myBrowser.loadUrl("javascript:callToChangeImage(\""+imgSrc+"\")");
     }
 
