@@ -98,10 +98,8 @@ public class HTML_Adapter extends BaseAdapter{
             isLoaded = false;
        }
        webViewDataHandler(holder.myBrowser,position);
-
         long endTime = System.currentTimeMillis();
         Log.d(HTML_Adapter.class.getSimpleName(),"time to inflate is " + (endTime - startTime) + "msec");
-
        return view;
     }
 
@@ -120,7 +118,7 @@ public class HTML_Adapter extends BaseAdapter{
 
         switch (type){
             case TYPE_ITEM1:
-                myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index1.html");
+                myBrowser.loadUrl("file:///android_asset/html1/testing.html");
                 //myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index1.html");
                 break;
 
@@ -130,8 +128,8 @@ public class HTML_Adapter extends BaseAdapter{
                 break;
 
             case TYPE_ITEM3:
-               // myBrowser.loadUrl("file:///android_asset/html1/index3.html");
-                myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index3.html");
+                myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index1.html");
+               // myBrowser.loadUrl("file://" + Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc/index3.html");
                 break;
 
             case TYPE_ITEM4:
@@ -143,15 +141,17 @@ public class HTML_Adapter extends BaseAdapter{
 
     }
 
-    private void webViewDataHandler(final WebView myBrowser, final int position) {
+    private void webViewDataHandler(WebView myBrowser, final int position) {
 
         if (isLoaded){
             myBrowser.setWebViewClient(new WebViewClient(){
                 @Override
                 public void onPageFinished(WebView view, String url) {
                     super.onPageFinished(view, url);
-                    htmlInteractor(position, myBrowser);
-
+                    htmlInteractor(position, view);
+                    ViewGroup.LayoutParams lp = view.getLayoutParams();
+                    lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    view.setLayoutParams(lp);
                 }
             });
         } else
@@ -172,6 +172,7 @@ public class HTML_Adapter extends BaseAdapter{
         int randomNum =(int) (Math.random() * 4);
          String imgSrc = Environment.getExternalStorageDirectory().getAbsolutePath() + "/poc_image/place_default" + String.valueOf(randomNum) + (randomNum == 0?".png":".jpg") ;
         myBrowser.loadUrl("javascript:callToChangeImage(\""+imgSrc+"\")");
+
     }
 
 

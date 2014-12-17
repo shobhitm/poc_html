@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hike Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Bootplus -->
+    <link href="css/bootplus.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootplus-responsive.min.css" rel="stylesheet" media="screen">
+
+    <!-- <link rel="stylesheet" href="https://mirror-api-playground.appspot.com/assets/css/base_style.css" > -->
+    <!-- <link href="../dist/css/bootcards-android.min.css" rel="stylesheet"> -->
+
+    <!--<link href="../dist/css/bootcards-android.min.css" rel="stylesheet">-->
+    <!-- Font awesome <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+    rel="stylesheet" />-->
+    <!-- <script src="js/holder.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="css/google_glass_base_style.css" > -->
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <style>
+        .list-group li {
+        list-style: none;
+        }
+        .panel-info, .panel-rating, .panel-more1 {
+        float: left;
+        margin: 0 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-heading image">
+            <img height="10px" width="10px" src="file:///android_asset/html1/sk_noplace.png" alt="">
+            <div class="card-heading-header">
+                <h3>Simple News Card</h3>
+                <span>Published today - 08.34 AM</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <p>This is some code I wrote 6 years ago and never released, just after I
+                saw this insipring blog post of 2008. I remember my son having tons of
+                fun with this, so while I rarely touched the code at all, I ran it multiple
+                times for him, and I plan to do it again when my daughter is old enough
+                to understand it.</p>
+        </div>
+        <div class="card-media">
+            <a class="card-media-container" href="#">
+                <img src="file:///android_asset/html1/sk_noplace.png" alt="media">
+            </a>
+        </div>
+        <div class="card-actions">
+            <button class="btn">
+            <span class="glyphicon glyphicon-heart" style="vertical-align:middle">
+              <i class="red"></i>
+            </span>
+            </button>
+            <button class="btn">Share</button>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<div class="clearfix"></div>
+
+<!-- Load the required JavaScript libraries -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.2/jquery.pjax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.3/fastclick.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<!-- Bootcards JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"></script>
+<!--recommended: FTLabs FastClick library-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.2/fastclick.min.js"></script>
+
+
+<script src="js/bootcardsdemo.js"></script>
+<script src="js/populateChartData.js"></script>
+
+<script type="text/javascript">
+          /*
+                   * Initialize Bootcards.
+                   * 
+                   * Parameters:
+                   * - offCanvasBackdrop (boolean): show a backdrop when the offcanvas is shown
+                   * - offCanvasHideOnMainClick (boolean): hide the offcanvas menu on clicking outside the off canvas
+                   * - enableTabletPortraitMode (boolean): enable single pane mode for tablets in portraitmode
+                   * - disableRubberBanding (boolean): disable the iOS rubber banding effect
+                   * - disableBreakoutSelector (boolean) : for iOS apps that are added to the home screen:
+                                        jQuery selector to target links for which a fix should be added to not
+                                        allow those links to break out of fullscreen mode.
+                   */
+                  bootcards.init( {
+                    offCanvasBackdrop : true,
+                    offCanvasHideOnMainClick : true,
+                    enableTabletPortraitMode : true,
+                    disableRubberBanding : true 
+                  });
+            
+                  //enable FastClick
+                  window.addEventListener('load', function() {
+                      FastClick.attach(document.body);
+                  }, false);
+        </script>
+
+</div>
+</div>
+</body>
+
+</html>
